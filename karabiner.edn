@@ -1,0 +1,131 @@
+{:templates {:launch "osascript -e 'tell application \"%s\" to activate'"}
+ :layers {
+          :hyper-right-mode {:key :right_option :alone {:key :escape}}
+          :hyper-left-mode {:key :left_option :alone {:key :escape}}
+          }
+ :simlayers {
+             :period-mode {:key :period}
+             :comma-mode {:key :comma}
+            }
+ :main [{:des "Hyper Mode - Numbers and Symbols"
+         :rules [
+                 :hyper-left-mode
+                 ;; numbers
+                 [:u :7]
+                 [:i :8]
+                 [:o :9]
+                 [:p :0]
+                 ;; symbols
+                 [:h :!S6]
+                 [:j :!S7]
+                 [:k :!S8]
+                 [:l :!S9]
+                 ;; hard to reach symbols
+                 [:##m :close_bracket] ;; ]
+                 [:##b :equal_sign]
+                 [:n :!S0]
+                 :hyper-right-mode
+                 ;; numbers
+                 [:q :1]
+                 [:w :2]
+                 [:e :3]
+                 [:r :4]
+                 [:t :5]
+                 [:y :6]
+                 ;; symbols
+                 [:a :!S1]
+                 [:s :!S2]
+                 [:d :!S3]
+                 [:f :!S4]
+                 [:g :!S5]
+                 [:v :!S9]
+                 ;; hard to reach symbols
+                 [:##c :open_bracket] ;; [
+                 [:##z :grave_accent_and_tilde]
+                 [:##b :equal_sign]
+                 ]
+                 }
+        {:des "Hyper Mode - Navigation [VI style]"
+         :rules [:hyper-left-mode
+                 [:j :down_arrow]
+                 [:k :up_arrow]
+                 [:h :left_arrow]
+                 [:l :right_arrow]
+                 [:b :!Oleft_arrow]
+                 [:w :!Oright_arrow]
+                 [:u :home]
+                 [:i :end]
+                 [:!Cj :!Sdown_arrow]
+                 [:!Ck :!Sup_arrow]
+                 [:!Ch :!Sleft_arrow]
+                 [:!Cl :!Sright_arrow]
+                 [:!Cb :!SOleft_arrow]
+                 [:!Cw :!SOright_arrow]
+                 [:!Cu :!Shome]
+                 [:!Ci :!Send]
+                 [:!Oj {:mkey {:y 1536}}]
+                 [:!Ok {:mkey {:y -1536}}]
+                 [:!Oh {:mkey {:x -1536}}]
+                 [:!Ol {:mkey {:x 1536}}]]}
+        
+        {:des "Hyper Mode - Mousekey"
+         :rules [:hyper-left-mode
+                 [:down_arrow {:mkey {:y 1536}}]
+                 [:up_arrow {:mkey {:y -1536}}]
+                 [:left_arrow {:mkey {:x -1536}}]
+                 [:right_arrow {:mkey {:x 1536}}]
+                 [:return_or_enter {:pkey :button1}]
+                 [:!Creturn_or_enter {:pkey :button2}]]}
+        
+        {:des "Hyper Mode - Deletion"
+         :rules [:hyper-mode
+                 [:n :!Odelete_or_backspace]
+                 [:m :delete_or_backspace]
+                 [:comma :delete_forward]
+                 [:period :!Odelete_forward]
+                 [:!Cn :!Cdelete_or_backspace]
+                 [:!Cm :!Cdelete_or_backspace]
+                 [:!Ccomma :!Cdelete_forward]
+                 [:!Cperiod :!Cdelete_forward]]}
+        
+        {:des "Hyper Mode - Misc"
+         :rules [:hyper-mode
+                 [:escape :caps_lock]
+                 [:grave_accent_and_tilde :!CS5]]}
+        
+
+        {:des "Comma Mode [,] as Trigger Key"
+         :rules [:comma-mode
+                 [:a :open_bracket]
+                 [:s :close_bracket]
+                 [:d :!S7]
+                 [:f :!S8]
+                 [:q :!Shyphen]
+                 [:w :!Sequal_sign]
+                 [:e :!S5]
+                 [:r :!S6]]}
+        
+        {:des "Period Mode [.] as Trigger Key"
+         :rules [:period-mode
+                 [:comma ["period-comma-mode" 1] nil {:alone :comma :afterup ["period-comma-mode" 0]}]
+                 [:a [:!Sgrave_accent_and_tilde :slash]]
+                 [:s [:period :!S8]]
+                 [:d :!S9]
+                 [:f :!S0]
+                 [:q :hyphen]
+                 [:w :equal_sign]
+                 [:e :!Sopen_bracket]
+                 [:r :!Sclose_bracket]]}
+
+        ;; {:des "HHKB, FILCO MINILA Change left control to esc if alone"
+        ;;  :rules [[:##left_control :left_control [:hhkb-bt :hhkb :hhkb-tmk :filco-minila] {:alone :escape}]]}
+        
+        {:des "Quit application by pressing command-q twice" 
+         :rules [[:!C#Pq [:!Cq ["command-q" 0]] ["command-q" 1]]
+                 [:!C#Pq ["command-q" 1] nil {:delayed {:invoked ["command-q" 0] :canceled ["commandq" 0]}}]]}]
+ 
+ ; the default value is 250
+ :simlayer-threshold 500
+ 
+
+}
