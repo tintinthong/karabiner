@@ -22,7 +22,6 @@
                  [:l :!S9]
                  ;; hard to reach symbols
                  [:##m :close_bracket] ;; ]
-                 [:##b :equal_sign]
                  [:n :!S0]
                  :hyper-right-mode
                  ;; numbers

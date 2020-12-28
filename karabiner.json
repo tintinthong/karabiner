@@ -183,22 +183,6 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "b",
-            "modifiers" : {
-              "optional" : [ "any" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "equal_sign"
-          } ],
-          "conditions" : [ {
-            "name" : "hyper-left-mode",
-            "value" : 1,
-            "type" : "variable_if"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
             "key_code" : "n"
           },
           "to" : [ {
