@@ -4,10 +4,17 @@
           :hyper-left-mode {:key :left_option :alone {:key :escape}}
           }
  :simlayers {
-             :period-mode {:key :period}
-             :comma-mode {:key :comma}
+             ;; :period-mode {:key :period}
+             ;; :comma-mode {:key :comma}
             }
- :main [{:des "Hyper Mode - Numbers and Symbols"
+ :main [
+        {:des   "press j and l simultaneously to f16"
+         :rules [
+                 [[:j :k] :equal_sign]
+                 [[:h :j] :!Sequal_sign]
+                 ]}
+
+        {:des "Hyper Mode - Numbers and Symbols"
          :rules [
                  :hyper-left-mode
                  ;; numbers
@@ -41,7 +48,7 @@
                  ;; hard to reach symbols
                  [:##c :open_bracket] ;; [
                  [:##z :grave_accent_and_tilde]
-                 [:##b :equal_sign]
+                 [:##b :hyphen]
                  ]
                  }
         {:des "Hyper Mode - Navigation [VI style]"
@@ -91,38 +98,35 @@
          :rules [:hyper-mode
                  [:escape :caps_lock]
                  [:grave_accent_and_tilde :!CS5]]}
-        
 
-        {:des "Comma Mode [,] as Trigger Key"
-         :rules [:comma-mode
-                 [:a :open_bracket]
-                 [:s :close_bracket]
-                 [:d :!S7]
-                 [:f :!S8]
-                 [:q :!Shyphen]
-                 [:w :!Sequal_sign]
-                 [:e :!S5]
-                 [:r :!S6]]}
-        
-        {:des "Period Mode [.] as Trigger Key"
-         :rules [:period-mode
-                 [:comma ["period-comma-mode" 1] nil {:alone :comma :afterup ["period-comma-mode" 0]}]
-                 [:a [:!Sgrave_accent_and_tilde :slash]]
-                 [:s [:period :!S8]]
-                 [:d :!S9]
-                 [:f :!S0]
-                 [:q :hyphen]
-                 [:w :equal_sign]
-                 [:e :!Sopen_bracket]
-                 [:r :!Sclose_bracket]]}
+        ;; reserve for macros pls
+        ;; {:des "Comma Mode [,] as Trigger Key"
+        ;;  :rules [:comma-mode
+        ;;          [:a :open_bracket]
+        ;;          [:s :close_bracket]
+        ;;          [:d :!S7]
+        ;;          [:f :!S8]
+        ;;          [:q :!Shyphen]
+        ;;          [:w :!Sequal_sign]
+        ;;          [:e :!S5]
+        ;;          [:r :!S6]]}
 
-        ;; {:des "HHKB, FILCO MINILA Change left control to esc if alone"
-        ;;  :rules [[:##left_control :left_control [:hhkb-bt :hhkb :hhkb-tmk :filco-minila] {:alone :escape}]]}
-        
-        {:des "Quit application by pressing command-q twice" 
+        ;; {:des "Period Mode [.] as Trigger Key"
+        ;;  :rules [:period-mode
+        ;;          [:comma ["period-comma-mode" 1] nil {:alone :comma :afterup ["period-comma-mode" 0]}]
+        ;;          [:a [:!Sgrave_accent_and_tilde :slash]]
+        ;;          [:s [:period :!S8]]
+        ;;          [:d :!S9]
+        ;;          [:f :!S0]
+        ;;          [:q :hyphen]
+        ;;          [:w :equal_sign]
+        ;;          [:e :!Sopen_bracket]
+        ;;          [:r :!Sclose_bracket]]}
+
+        {:des "Quit application by pressing command-q twice"
          :rules [[:!C#Pq [:!Cq ["command-q" 0]] ["command-q" 1]]
                  [:!C#Pq ["command-q" 1] nil {:delayed {:invoked ["command-q" 0] :canceled ["commandq" 0]}}]]}]
- 
+
  ; the default value is 250
  :simlayer-threshold 500
  
