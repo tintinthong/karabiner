@@ -51,28 +51,28 @@
                  [:##b :hyphen]
                  ]
                  }
-        {:des "Hyper Mode - Navigation [VI style]"
-         :rules [:hyper-left-mode
-                 [:j :down_arrow]
-                 [:k :up_arrow]
-                 [:h :left_arrow]
-                 [:l :right_arrow]
-                 [:b :!Oleft_arrow]
-                 [:w :!Oright_arrow]
-                 [:u :home]
-                 [:i :end]
-                 [:!Cj :!Sdown_arrow]
-                 [:!Ck :!Sup_arrow]
-                 [:!Ch :!Sleft_arrow]
-                 [:!Cl :!Sright_arrow]
-                 [:!Cb :!SOleft_arrow]
-                 [:!Cw :!SOright_arrow]
-                 [:!Cu :!Shome]
-                 [:!Ci :!Send]
-                 [:!Oj {:mkey {:y 1536}}]
-                 [:!Ok {:mkey {:y -1536}}]
-                 [:!Oh {:mkey {:x -1536}}]
-                 [:!Ol {:mkey {:x 1536}}]]}
+        ;; {:des "Hyper Mode - Navigation [VI style]"
+        ;;  :rules [:hyper-left-mode
+        ;;          [:j :down_arrow]
+        ;;          [:k :up_arrow]
+        ;;          [:h :left_arrow]
+        ;;          [:l :right_arrow]
+        ;;          [:b :!Oleft_arrow]
+        ;;          [:w :!Oright_arrow]
+        ;;          [:u :home]
+        ;;          [:i :end]
+        ;;          [:!Cj :!Sdown_arrow]
+        ;;          [:!Ck :!Sup_arrow]
+        ;;          [:!Ch :!Sleft_arrow]
+        ;;          [:!Cl :!Sright_arrow]
+        ;;          [:!Cb :!SOleft_arrow]
+        ;;          [:!Cw :!SOright_arrow]
+        ;;          [:!Cu :!Shome]
+        ;;          [:!Ci :!Send]
+        ;;          [:!Oj {:mkey {:y 1536}}]
+        ;;          [:!Ok {:mkey {:y -1536}}]
+        ;;          [:!Oh {:mkey {:x -1536}}]
+        ;;          [:!Ol {:mkey {:x 1536}}]]}
         
         {:des "Hyper Mode - Mousekey"
          :rules [:hyper-left-mode
@@ -83,16 +83,16 @@
                  [:return_or_enter {:pkey :button1}]
                  [:!Creturn_or_enter {:pkey :button2}]]}
         
-        {:des "Hyper Mode - Deletion"
-         :rules [:hyper-mode
-                 [:n :!Odelete_or_backspace]
-                 [:m :delete_or_backspace]
-                 [:comma :delete_forward]
-                 [:period :!Odelete_forward]
-                 [:!Cn :!Cdelete_or_backspace]
-                 [:!Cm :!Cdelete_or_backspace]
-                 [:!Ccomma :!Cdelete_forward]
-                 [:!Cperiod :!Cdelete_forward]]}
+        ;; {:des "Hyper Mode - Deletion"
+        ;;  :rules [:hyper-mode
+        ;;          [:n :!Odelete_or_backspace]
+        ;;          [:m :delete_or_backspace]
+        ;;          [:comma :delete_forward]
+        ;;          [:period :!Odelete_forward]
+        ;;          [:!Cn :!Cdelete_or_backspace]
+        ;;          [:!Cm :!Cdelete_or_backspace]
+        ;;          [:!Ccomma :!Cdelete_forward]
+        ;;          [:!Cperiod :!Cdelete_forward]]}
         
         {:des "Hyper Mode - Misc"
          :rules [:hyper-mode
