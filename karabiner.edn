@@ -1,37 +1,67 @@
-{:templates {:launch "osascript -e 'tell application \"%s\" to activate'"}
+{
+ ;; You want to use a unfrequently triggered key especially wrt to macos
+ ;; You might influence your app level keybindings -- be mindful of that
+ ;; Safest to avoid layers
+ ;; The keybindigns have to be OBVIOUS
  :layers {
-          :hyper-right-mode {:key :right_option :alone {:key :escape}}
-          :hyper-left-mode {:key :left_option :alone {:key :escape}}
+          :hyper-right-mode {:key :right_option}
+          :hyper-left-mode {:key :left_option}
           }
  :simlayers {
-             ;; :period-mode {:key :period}
-             ;; :comma-mode {:key :comma}
             }
- :main [{:des   "caps_lock to esc when pressed alone, to ctrl as modifier"
-         :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
+ :main [
+        ;; Collecting data on what you use
 
-        {:des   "press j and l simultaneously to f16"
+        ;; Most common VIM movements
+        ;; delete till closing parantheses )]}
+        ;; delete till end of line
+        ;; delete to ending of a word
+
+        {
+         :des "Using control to remove and delete"
+         :rules [
+                 [:!Tw :!Odelete_or_backspace] ;; delete word backward
+                 [:!Th :delete_or_backspace]
+                 ]}
+         {
+         :des   "caps_lock to esc when pressed alone, to ctrl as modifier"
+         :rules [[:caps_lock :left_control nil {:alone :escape}]]}
+        {:des   "press keys simulatenously for math"
          :rules [
                  [[:j :k] :equal_sign]
                  [[:h :j] :!Sequal_sign]
+                 [[:a :s] :open_bracket]
+                 [[:l :semicolon] :close_bracket]
+                 [[:s :d] :!S9]
+                 [[:k :l] :!S0]
+                 [[:a :d] :!Sopen_bracket]
+                 [[:j :l] :!Sclose_bracket]
                  ]}
-
         {:des "Hyper Mode - Numbers and Symbols"
          :rules [
                  :hyper-left-mode
                  ;; numbers
+                 [:q :1]
+                 [:w :2]
+                 [:e :3]
+                 [:r :4]
+                 [:t :5]
+                 [:y :6]
                  [:u :7]
                  [:i :8]
                  [:o :9]
                  [:p :0]
-                 ;; symbols
+                 [:a :!S1]
+                 [:s :!S2]
+                 [:d :!S3]
+                 [:f :!S4]
+                 [:g :!S5]
                  [:h :!S6]
                  [:j :!S7]
                  [:k :!S8]
                  [:l :!S9]
+                 ;; symbols
                  ;; hard to reach symbols
-                 [:##m :close_bracket] ;; ]
-                 [:n :!S0]
                  :hyper-right-mode
                  ;; numbers
                  [:q :1]
@@ -40,17 +70,22 @@
                  [:r :4]
                  [:t :5]
                  [:y :6]
+                 [:u :7]
+                 [:i :8]
+                 [:o :9]
+                 [:p :0]
                  ;; symbols
                  [:a :!S1]
                  [:s :!S2]
                  [:d :!S3]
                  [:f :!S4]
                  [:g :!S5]
-                 [:v :!S9]
+                 [:h :!S6]
+                 [:j :!S7]
+                 [:k :!S8]
+                 [:l :!S9]
                  ;; hard to reach symbols
-                 [:##c :open_bracket] ;; [
                  [:##z :grave_accent_and_tilde]
-                 [:##b :hyphen]
                  ]
                  }
         ;; {:des "Hyper Mode - Navigation [VI style]"
@@ -84,18 +119,7 @@
                  [:right_arrow {:mkey {:x 1536}}]
                  [:return_or_enter {:pkey :button1}]
                  [:!Creturn_or_enter {:pkey :button2}]]}
-        
-        ;; {:des "Hyper Mode - Deletion"
-        ;;  :rules [:hyper-mode
-        ;;          [:n :!Odelete_or_backspace]
-        ;;          [:m :delete_or_backspace]
-        ;;          [:comma :delete_forward]
-        ;;          [:period :!Odelete_forward]
-        ;;          [:!Cn :!Cdelete_or_backspace]
-        ;;          [:!Cm :!Cdelete_or_backspace]
-        ;;          [:!Ccomma :!Cdelete_forward]
-        ;;          [:!Cperiod :!Cdelete_forward]]}
-        
+
         {:des "Hyper Mode - Misc"
          :rules [:hyper-mode
                  [:escape :caps_lock]
