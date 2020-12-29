@@ -7,7 +7,9 @@
              ;; :period-mode {:key :period}
              ;; :comma-mode {:key :comma}
             }
- :main [
+ :main [{:des   "caps_lock to esc when pressed alone, to ctrl as modifier"
+         :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
+
         {:des   "press j and l simultaneously to f16"
          :rules [
                  [[:j :k] :equal_sign]
@@ -130,5 +132,4 @@
  ; the default value is 250
  :simlayer-threshold 500
  
-
 }

@@ -56,6 +56,23 @@
           } ]
         } ]
       }, {
+        "description" : "caps_lock to esc when pressed alone, to ctrl as modifier",
+        "manipulators" : [ {
+          "to_if_alone" : [ {
+            "key_code" : "escape"
+          } ],
+          "from" : {
+            "key_code" : "caps_lock",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_control"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "press j and l simultaneously to f16",
         "manipulators" : [ {
           "from" : {
