@@ -1,38 +1,36 @@
-{
+ {
  ;; You want to use a unfrequently triggered key especially wrt to macos
  ;; You might influence your app level keybindings -- be mindful of that
  ;; Safest to avoid layers
  ;; The keybindigns have to be OBVIOUS
  ;; Use freaking key chords so you dont pollute the keybinding space
  :layers {
-          :hyper-right-mode {:key :right_option}
+          :hyper-right-mode {:key :right_option} ;; this right_option really means right_command since we remapping it later on
           :hyper-left-mode {:key :left_option}
           }
  :simlayers {
             }
  :main [
-        ;; Collecting data on what you use
-
-        ;; Most common VIM movements
-        ;; delete till closing parantheses )]}
-        ;; delete till end of line
-        ;; delete to ending of a word
-
         {
          :des "Using control to remove and delete"
          :rules [
-                 [:!Tw :!Odelete_or_backspace] ;; delete word backward
+                 [:!Tw :!Odelete_or_backspace] ;; delete word backward This might really suck for linux window delete
                  [:!Th :delete_or_backspace]
                  ]}
          {
          :des   "caps_lock to esc when pressed alone, to ctrl as modifier"
-         :rules [[:caps_lock :left_control nil {:alone :escape}]]}
+          :rules [
+          [:caps_lock :left_control nil {:alone :escape}]
+          [:left_option :left_command]
+          [:right_option :right_command]
+          ]
+         }
         {:des   "press keys simulatenously for math"
          :rules [
-                 ;; [[:d :f] :] remember to fill this is a good one
                  [[:j :k] :equal_sign]
-                 ;; [[:h :j] :!Sequal_sign]
+                 [[:d :f] :!Sequal_sign]
                  [[:h :j] :hyphen]
+                 [[:f :g] :!Shyphen]
                  [[:a :s] :open_bracket]
                  [[:l :semicolon] :close_bracket]
                  [[:s :d] :!S9]
@@ -53,53 +51,17 @@
                  [:k :7]
                  [:l :8]
                  [:semicolon :9]
-                 [:##h :hyphen]
-                 ;; [:q :1]
-                 ;; [:w :2]
-                 ;; [:e :3]
-                 ;; [:r :4]
-                 ;; [:t :5]
-                 ;; [:y :6]
-                 ;; [:u :7]
-                 ;; [:i :8]
-                 ;; [:o :9]
-                 ;; [:p :0]
-                 ;; [:a :!S1]
-                 ;; [:s :!S2]
-                 ;; [:d :!S3]
-                 ;; [:f :!S4]
-                 ;; [:g :!S5]
-                 ;; [:h :!S6]
-                 ;; [:j :!S7]
-                 ;; [:k :!S8]
-                 ;; [:l :!S9]
-                 ;; [:b :hyphen]
                  :hyper-right-mode
+                 [:##a :!S1]
+                 [:##s :!S2]
+                 [:##d :!S3]
                  [:##f :!S4]
                  [:##g :!S5]
-                 [:##s :!S2]
-                 [:##z :grave_accent_and_tilde]
-                 ;; [:q :1]
-                 ;; [:w :2]
-                 ;; [:e :3]
-                 ;; [:r :4]
-                 ;; [:t :5]
-                 ;; [:y :6]
-                 ;; [:u :7]
-                 ;; [:i :8]
-                 ;; [:o :9]
-                 ;; [:p :0]
-                 ;; [:b :hyphen]
-                 ;; [:a :!S1]
-                 ;; [:s :!S2]
-                 ;; [:d :!S3]
-                 ;; [:f :!S4]
-                 ;; [:g :!S5]
-                 ;; [:h :!S6]
-                 ;; [:j :!S7]
-                 ;; [:k :!S8]
-                 ;; [:l :!S9]
-                 ;; [:##z :grave_accent_and_tilde]
+                 [:##q :!S1]
+                 [:##w :!S6]
+                 [:##e :!S7]
+                 [:##r :!S8]
+                 [:##v :grave_accent_and_tilde]
                  ]
                  }
         ;; {:des "Hyper Mode - Navigation [VI style]"
@@ -124,7 +86,7 @@
         ;;          [:!Ok {:mkey {:y -1536}}]
         ;;          [:!Oh {:mkey {:x -1536}}]
         ;;          [:!Ol {:mkey {:x 1536}}]]}
-        
+
         {:des "Hyper Mode - Mousekey"
          :rules [:hyper-left-mode
                  [:down_arrow {:mkey {:y 1536}}]
@@ -167,7 +129,8 @@
          :rules [[:!C#Pq [:!Cq ["command-q" 0]] ["command-q" 1]]
                  [:!C#Pq ["command-q" 1] nil {:delayed {:invoked ["command-q" 0] :canceled ["commandq" 0]}}]]}]
 
+
  ; the default value is 250
  :simlayer-threshold 500
- 
+
 }
