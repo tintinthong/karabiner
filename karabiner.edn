@@ -3,6 +3,7 @@
  ;; You might influence your app level keybindings -- be mindful of that
  ;; Safest to avoid layers
  ;; The keybindigns have to be OBVIOUS
+ ;; Use freaking key chords so you dont pollute the keybinding space
  :layers {
           :hyper-right-mode {:key :right_option}
           :hyper-left-mode {:key :left_option}
@@ -28,8 +29,10 @@
          :rules [[:caps_lock :left_control nil {:alone :escape}]]}
         {:des   "press keys simulatenously for math"
          :rules [
+                 ;; [[:d :f] :] remember to fill this is a good one
                  [[:j :k] :equal_sign]
-                 [[:h :j] :!Sequal_sign]
+                 ;; [[:h :j] :!Sequal_sign]
+                 [[:h :j] :hyphen]
                  [[:a :s] :open_bracket]
                  [[:l :semicolon] :close_bracket]
                  [[:s :d] :!S9]
@@ -40,52 +43,63 @@
         {:des "Hyper Mode - Numbers and Symbols"
          :rules [
                  :hyper-left-mode
-                 ;; numbers
-                 [:q :1]
-                 [:w :2]
-                 [:e :3]
-                 [:r :4]
-                 [:t :5]
-                 [:y :6]
-                 [:u :7]
-                 [:i :8]
-                 [:o :9]
-                 [:p :0]
-                 [:a :!S1]
-                 [:s :!S2]
-                 [:d :!S3]
-                 [:f :!S4]
-                 [:g :!S5]
-                 [:h :!S6]
-                 [:j :!S7]
-                 [:k :!S8]
-                 [:l :!S9]
-                 ;; symbols
-                 ;; hard to reach symbols
+                 [:y :0]
+                 [:u :1]
+                 [:i :2]
+                 [:o :3]
+                 [:p :4]
+                 [:h :5]
+                 [:j :6]
+                 [:k :7]
+                 [:l :8]
+                 [:semicolon :9]
+                 [:##h :hyphen]
+                 ;; [:q :1]
+                 ;; [:w :2]
+                 ;; [:e :3]
+                 ;; [:r :4]
+                 ;; [:t :5]
+                 ;; [:y :6]
+                 ;; [:u :7]
+                 ;; [:i :8]
+                 ;; [:o :9]
+                 ;; [:p :0]
+                 ;; [:a :!S1]
+                 ;; [:s :!S2]
+                 ;; [:d :!S3]
+                 ;; [:f :!S4]
+                 ;; [:g :!S5]
+                 ;; [:h :!S6]
+                 ;; [:j :!S7]
+                 ;; [:k :!S8]
+                 ;; [:l :!S9]
+                 ;; [:b :hyphen]
                  :hyper-right-mode
-                 ;; numbers
-                 [:q :1]
-                 [:w :2]
-                 [:e :3]
-                 [:r :4]
-                 [:t :5]
-                 [:y :6]
-                 [:u :7]
-                 [:i :8]
-                 [:o :9]
-                 [:p :0]
-                 ;; symbols
-                 [:a :!S1]
-                 [:s :!S2]
-                 [:d :!S3]
-                 [:f :!S4]
-                 [:g :!S5]
-                 [:h :!S6]
-                 [:j :!S7]
-                 [:k :!S8]
-                 [:l :!S9]
-                 ;; hard to reach symbols
+                 [:##f :!S4]
+                 [:##g :!S5]
+                 [:##s :!S2]
                  [:##z :grave_accent_and_tilde]
+                 ;; [:q :1]
+                 ;; [:w :2]
+                 ;; [:e :3]
+                 ;; [:r :4]
+                 ;; [:t :5]
+                 ;; [:y :6]
+                 ;; [:u :7]
+                 ;; [:i :8]
+                 ;; [:o :9]
+                 ;; [:p :0]
+                 ;; [:b :hyphen]
+                 ;; [:a :!S1]
+                 ;; [:s :!S2]
+                 ;; [:d :!S3]
+                 ;; [:f :!S4]
+                 ;; [:g :!S5]
+                 ;; [:h :!S6]
+                 ;; [:j :!S7]
+                 ;; [:k :!S8]
+                 ;; [:l :!S9]
+                 ;; [:##z :grave_accent_and_tilde]
                  ]
                  }
         ;; {:des "Hyper Mode - Navigation [VI style]"
