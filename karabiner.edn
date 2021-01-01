@@ -1,9 +1,11 @@
+;; {:main []}
  {
  ;; You want to use a unfrequently triggered key especially wrt to macos
  ;; You might influence your app level keybindings -- be mindful of that
  ;; Safest to avoid layers
  ;; The keybindigns have to be OBVIOUS
- ;; Use freaking key chords so you dont pollute the keybinding space
+ ;; Use freaking key chords so you dont pollute the keybinding
+ ;;
  :layers {
           :hyper-right-mode {:key :right_option} ;; this right_option really means right_command since we remapping it later on
           :hyper-left-mode {:key :left_option}
@@ -21,8 +23,6 @@
          :des   "caps_lock to esc when pressed alone, to ctrl as modifier"
           :rules [
           [:caps_lock :left_control nil {:alone :escape}]
-          [:left_option :left_command]
-          [:right_option :right_command]
           ]
          }
         {:des   "press keys simulatenously for math"
@@ -51,13 +51,33 @@
                  [:k :7]
                  [:l :8]
                  [:semicolon :9]
-                 :hyper-right-mode
                  [:##a :!S1]
                  [:##s :!S2]
                  [:##d :!S3]
                  [:##f :!S4]
                  [:##g :!S5]
-                 [:##q :!S1]
+                 [:##q :!Sgrave_accent_and_tilde]
+                 [:##w :!S6]
+                 [:##e :!S7]
+                 [:##r :!S8]
+                 [:##v :grave_accent_and_tilde]
+                 :hyper-right-mode
+                 [:y :0]
+                 [:u :1]
+                 [:i :2]
+                 [:o :3]
+                 [:p :4]
+                 [:h :5]
+                 [:j :6]
+                 [:k :7]
+                 [:l :8]
+                 [:semicolon :9]
+                 [:##a :!S1]
+                 [:##s :!S2]
+                 [:##d :!S3]
+                 [:##f :!S4]
+                 [:##g :!S5]
+                 [:##q :!Sgrave_accent_and_tilde]
                  [:##w :!S6]
                  [:##e :!S7]
                  [:##r :!S8]
