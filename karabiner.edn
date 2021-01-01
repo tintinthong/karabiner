@@ -7,8 +7,8 @@
  ;; Use freaking key chords so you dont pollute the keybinding
  ;;
  :layers {
-          :hyper-right-mode {:key :right_option} ;; this right_option really means right_command since we remapping it later on
-          :hyper-left-mode {:key :left_option}
+          :hyper-right-mode {:key :period} ;; this right_option really means right_command since we remapping it later on
+          :hyper-left-mode {:key :z}
           }
  :simlayers {
             }
@@ -36,21 +36,22 @@
                  [[:s :d] :!S9]
                  [[:k :l] :!S0]
                  [[:a :d] :!Sopen_bracket]
-                 [[:j :l] :!Sclose_bracket]
+                 [[:k :semicolon] :!Sclose_bracket]
                  ]}
         {:des "Hyper Mode - Numbers and Symbols"
          :rules [
                  :hyper-left-mode
-                 [:y :0]
-                 [:u :1]
-                 [:i :2]
-                 [:o :3]
-                 [:p :4]
-                 [:h :5]
-                 [:j :6]
-                 [:k :7]
-                 [:l :8]
                  [:semicolon :9]
+                 [:u :0] ;; I start from u but some ppl might like to start from y
+                 [:i :1]
+                 [:o :2]
+                 [:p :3]
+                 [:open_bracket :4]
+                 [:j :5]
+                 [:k :6]
+                 [:l :7]
+                 [:semicolon :8]
+                 [:quote :9]
                  [:##a :!S1]
                  [:##s :!S2]
                  [:##d :!S3]
@@ -62,16 +63,16 @@
                  [:##r :!S8]
                  [:##v :grave_accent_and_tilde]
                  :hyper-right-mode
-                 [:y :0]
-                 [:u :1]
-                 [:i :2]
-                 [:o :3]
-                 [:p :4]
-                 [:h :5]
-                 [:j :6]
-                 [:k :7]
-                 [:l :8]
-                 [:semicolon :9]
+                 [:u :0]
+                 [:i :1]
+                 [:o :2]
+                 [:p :3]
+                 [:open_bracket :4]
+                 [:j :5]
+                 [:k :6]
+                 [:l :7]
+                 [:semicolon :8]
+                 [:quote :9]
                  [:##a :!S1]
                  [:##s :!S2]
                  [:##d :!S3]
@@ -106,6 +107,7 @@
         ;;          [:!Ok {:mkey {:y -1536}}]
         ;;          [:!Oh {:mkey {:x -1536}}]
         ;;          [:!Ol {:mkey {:x 1536}}]]}
+
 
         {:des "Hyper Mode - Mousekey"
          :rules [:hyper-left-mode
@@ -148,6 +150,7 @@
         {:des "Quit application by pressing command-q twice"
          :rules [[:!C#Pq [:!Cq ["command-q" 0]] ["command-q" 1]]
                  [:!C#Pq ["command-q" 1] nil {:delayed {:invoked ["command-q" 0] :canceled ["commandq" 0]}}]]}]
+
 
 
  ; the default value is 250
