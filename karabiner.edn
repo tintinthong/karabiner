@@ -37,6 +37,7 @@
                  [[:k :l] :!S0]
                  [[:a :d] :!Sopen_bracket]
                  [[:k :semicolon] :!Sclose_bracket]
+                 [[:o :p] :backslash]
                  ]}
         {:des "Hyper Mode - Numbers and Symbols"
          :rules [
