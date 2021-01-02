@@ -1,22 +1,15 @@
-;; {:main []}
  {
- ;; You want to use a unfrequently triggered key especially wrt to macos
- ;; You might influence your app level keybindings -- be mindful of that
- ;; Safest to avoid layers
- ;; The keybindigns have to be OBVIOUS
- ;; Use freaking key chords so you dont pollute the keybinding
- ;;
  :layers {
-          :hyper-right-mode {:key :period} ;; this right_option really means right_command since we remapping it later on
+          :hyper-right-mode {:key :period}
           :hyper-left-mode {:key :z}
           }
  :simlayers {
             }
  :main [
         {
-         :des "Using control to remove and delete"
+         :des "unix delete"
          :rules [
-                 [:!Tw :!Odelete_or_backspace] ;; delete word backward This might really suck for linux window delete
+                 [:!Tw :!Odelete_or_backspace]
                  [:!Th :delete_or_backspace]
                  ]}
          {
@@ -25,7 +18,7 @@
           [:caps_lock :left_control nil {:alone :escape}]
           ]
          }
-        {:des   "press keys simulatenously for math"
+        {:des   "key chords"
          :rules [
                  [[:j :k] :equal_sign]
                  [[:d :f] :!Sequal_sign]
@@ -40,7 +33,7 @@
                  [[:o :p] :backslash]
                  [[:i :o] :!Sbackslash]
                  ]}
-        {:des "Hyper Mode - Numbers and Symbols"
+        {:des "hyper mode - basically, replacing numbers and symbols "
          :rules [
                  :hyper-left-mode
                  [:y :0]
@@ -87,31 +80,8 @@
                  [:##v :grave_accent_and_tilde]
                  ]
                  }
-        ;; {:des "Hyper Mode - Navigation [VI style]"
-        ;;  :rules [:hyper-left-mode
-        ;;          [:j :down_arrow]
-        ;;          [:k :up_arrow]
-        ;;          [:h :left_arrow]
-        ;;          [:l :right_arrow]
-        ;;          [:b :!Oleft_arrow]
-        ;;          [:w :!Oright_arrow]
-        ;;          [:u :home]
-        ;;          [:i :end]
-        ;;          [:!Cj :!Sdown_arrow]
-        ;;          [:!Ck :!Sup_arrow]
-        ;;          [:!Ch :!Sleft_arrow]
-        ;;          [:!Cl :!Sright_arrow]
-        ;;          [:!Cb :!SOleft_arrow]
-        ;;          [:!Cw :!SOright_arrow]
-        ;;          [:!Cu :!Shome]
-        ;;          [:!Ci :!Send]
-        ;;          [:!Oj {:mkey {:y 1536}}]
-        ;;          [:!Ok {:mkey {:y -1536}}]
-        ;;          [:!Oh {:mkey {:x -1536}}]
-        ;;          [:!Ol {:mkey {:x 1536}}]]}
 
-
-        {:des "Hyper Mode - Mousekey"
+        {:des "hyper-mode - mouse"
          :rules [:hyper-left-mode
                  [:down_arrow {:mkey {:y 1536}}]
                  [:up_arrow {:mkey {:y -1536}}]
@@ -120,42 +90,8 @@
                  [:return_or_enter {:pkey :button1}]
                  [:!Creturn_or_enter {:pkey :button2}]]}
 
-        {:des "Hyper Mode - Misc"
-         :rules [:hyper-mode
-                 [:escape :caps_lock]
-                 [:grave_accent_and_tilde :!CS5]]}
-
-        ;; reserve for macros pls
-        ;; {:des "Comma Mode [,] as Trigger Key"
-        ;;  :rules [:comma-mode
-        ;;          [:a :open_bracket]
-        ;;          [:s :close_bracket]
-        ;;          [:d :!S7]
-        ;;          [:f :!S8]
-        ;;          [:q :!Shyphen]
-        ;;          [:w :!Sequal_sign]
-        ;;          [:e :!S5]
-        ;;          [:r :!S6]]}
-
-        ;; {:des "Period Mode [.] as Trigger Key"
-        ;;  :rules [:period-mode
-        ;;          [:comma ["period-comma-mode" 1] nil {:alone :comma :afterup ["period-comma-mode" 0]}]
-        ;;          [:a [:!Sgrave_accent_and_tilde :slash]]
-        ;;          [:s [:period :!S8]]
-        ;;          [:d :!S9]
-        ;;          [:f :!S0]
-        ;;          [:q :hyphen]
-        ;;          [:w :equal_sign]
-        ;;          [:e :!Sopen_bracket]
-        ;;          [:r :!Sclose_bracket]]}
-
-        {:des "Quit application by pressing command-q twice"
-         :rules [[:!C#Pq [:!Cq ["command-q" 0]] ["command-q" 1]]
-                 [:!C#Pq ["command-q" 1] nil {:delayed {:invoked ["command-q" 0] :canceled ["commandq" 0]}}]]}]
-
-
-
+        ]
  ; the default value is 250
  :simlayer-threshold 500
 
-}
+ }
