@@ -5,6 +5,7 @@
           }
  :simlayers {
             }
+  ; but if you press modifier+<non-mapped-key> folllowed by modifier+<mapped-key> you will get the latter followed by the former
  :main [
         {
          :des "unix delete"
@@ -92,6 +93,5 @@
 
         ]
  ; the default value is 250
- :simlayer-threshold 500
-
- }
+ :simlayer-threshold 300
+}
