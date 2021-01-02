@@ -59,11 +59,11 @@ The ultimate restriction that I impose on myself is that I am only allowed to us
 ** Concepts
 *** 40%
  We need to keep our hands only 1 key away from the pressing button. Naturally, I have removed a set of keys. When I say "removed", what I mean is that I have created a finger-path that requires less movment of the fingers; you can still use the keys as they originally are.
-**** Arrow keys
-**** Number/Symbol keys (including parantheses)
-**** Math keys (-,+)
-**** Far-reaching keys \,`,delete,]
-**** Also for no good reason I have removed h ]
+- Arrow keys
+- Number/Symbol keys (including parantheses)
+- Math keys (-,+)
+- Far-reaching keys \,`,delete,]
+- Also for no good reason I have removed h ]
 *** Spatially and sequentially aware
 There is a logical placement to keys. Most people like to optimise by placing the keys they use the most at the most comfortable places; I consider this important but I do so while still keeping my keymaps mildly deducible.
 **** Parantheses
