@@ -66,11 +66,11 @@ The ultimate restriction that I impose on myself is that I am only allowed to us
 - Also for no good reason I have removed h ]
 *** Spatially and sequentially aware
 There is a logical placement to keys. Most people like to optimise by placing the keys they use the most at the most comfortable places; I consider this important but I do so while still keeping my keymaps mildly deducible.
-**** Parantheses
+- Parantheses
 Closing and opening should mirror each other and should be either side of the keyboard.
-**** Key Chord
+- Key Chord
 Because of limitation of keychors not being to lifted by shift layer, any key chord will have its shift-variant strategically placed too. For example, j+k and d+f represent equals and plus respectively.
-**** Symbols with numbers
+- Symbols with numbers
 Symbols and numbers are separated, although they are shift-variants of one another. But, the keys for symbols go up in systematic order.
 *** Key-Chord-centric
 Key-Chord or simulataneous-key presses are so underrated. By pressing two keys simultaneously, I can get a generate input of ANY key. Most application keybindings NEVER EVER EVER a key-chord. Therefore, if you want to have keymappings clean and uninterrupted, this is the safest way to go. These are done for parantheses-like symbols, math-keys and backslash.
