@@ -112,7 +112,7 @@
             }
           },
           "to" : [ {
-            "key_code" : "equal_sign"
+            "key_code" : "hyphen"
           } ],
           "type" : "basic"
         }, {
@@ -130,7 +130,7 @@
             }
           },
           "to" : [ {
-            "key_code" : "equal_sign",
+            "key_code" : "hyphen",
             "modifiers" : [ "left_shift" ]
           } ],
           "type" : "basic"
@@ -149,7 +149,7 @@
             }
           },
           "to" : [ {
-            "key_code" : "hyphen"
+            "key_code" : "equal_sign"
           } ],
           "type" : "basic"
         }, {
@@ -167,7 +167,7 @@
             }
           },
           "to" : [ {
-            "key_code" : "hyphen",
+            "key_code" : "equal_sign",
             "modifiers" : [ "left_shift" ]
           } ],
           "type" : "basic"
@@ -325,7 +325,7 @@
         "description" : "hyper mode - basically, replacing numbers and symbols ",
         "manipulators" : [ {
           "from" : {
-            "key_code" : "y"
+            "key_code" : "h"
           },
           "to" : [ {
             "key_code" : "0"
@@ -637,7 +637,7 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "y"
+            "key_code" : "h"
           },
           "to" : [ {
             "key_code" : "0"

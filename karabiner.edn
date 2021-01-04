@@ -19,12 +19,14 @@
           [:caps_lock :left_control nil {:alone :escape}]
           ]
          }
+        ; how make key chord work with shift or command
         {:des   "key chords"
          :rules [
-                 [[:j :k] :equal_sign]
-                 [[:d :f] :!Sequal_sign]
-                 [[:h :j] :hyphen]
-                 [[:f :g] :!Shyphen]
+
+                 [[:j :k] :hyphen]
+                 [[:d :f] :!Shyphen]
+                 [[:h :j] :equal_sign]
+                 [[:f :g] :!Sequal_sign]
                  [[:a :s] :open_bracket]
                  [[:l :semicolon] :close_bracket]
                  [[:s :d] :!S9]
@@ -37,7 +39,7 @@
         {:des "hyper mode - basically, replacing numbers and symbols "
          :rules [
                  :hyper-left-mode
-                 [:y :0]
+                 [:h :0]
                  [:u :1]
                  [:i :2]
                  [:o :3]
@@ -59,7 +61,7 @@
                  [:##q :!Sgrave_accent_and_tilde]
                  [:##v :grave_accent_and_tilde]
                  :hyper-right-mode
-                 [:y :0]
+                 [:h :0]
                  [:u :1]
                  [:i :2]
                  [:o :3]
