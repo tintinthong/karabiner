@@ -10,7 +10,7 @@
         {
          :des "unix delete"
          :rules [
-                 [:!Tw :!Odelete_or_backspace]
+                 [:!Tj :!Odelete_or_backspace]
                  [:!Th :delete_or_backspace]
                  ]}
          {
@@ -30,7 +30,8 @@
                  [[:a :s] :open_bracket]
                  [[:l :semicolon] :close_bracket]
                  [[:s :d] :!S9]
-                 [[:k :l] :!S0]
+
+[[:k :l] :!S0]
                  [[:a :d] :!Sopen_bracket]
                  [[:k :semicolon] :!Sclose_bracket]
                  [[:o :p] :backslash]
