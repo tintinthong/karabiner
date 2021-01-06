@@ -5,7 +5,7 @@
             }
  :main [
         {
-         :des "fast access"
+         :des "unix shortcuts"
          :rules [
                  [:!Tj :!Odelete_or_backspace] ;unix
                  [:!Th :delete_or_backspace] ;unix
@@ -38,10 +38,11 @@
          :rules [
                  [[:j :i] ["symbol-layer" 1]]
                  [[:e :f] ["symbol-layer" 0]]
-                 [[:f :j] ["vi-mode" 0]]
+                 [[:f :j] ["vi-layer" 1]]
+                 [[:d :k] ["vi-layer" 0]]
                  ]
          }
-        {:des "hyper mode - basically, replacing numbers and symbols "
+        {:des "symbol-layer (also for mouse btw)"
          :rules [
                  :symbol-layer
                  [:##h :0]
@@ -67,6 +68,20 @@
                  [:##v :grave_accent_and_tilde]
                  ]
          }
+        {:des "Vi Mode"
+         ;maybe don't overdo this
+         :rules [
+                 :vi-layer
+                [:##j :down_arrow]
+                [:##k :up_arrow]
+                [:##h :left_arrow]
+                [:##l :right_arrow]
+                [:##b :!Oleft_arrow]
+                [:##w :!Oright_arrow]
+                [:##e [:!Oright_arrow :right_arrow] ]
+                ]
+         }
+        ;;
         ;; {:des   "Quit application by pressing command-q twice"
         ;;       :rules [[:e [:o ["mode-w" 0]] ["mode-w" 1]]
         ;;               [:e ["mode-w" 1] nil {:delayed {:invoked ["mode-w" 0] :held :s :canceled ["mode-w" 0]}}]]}
