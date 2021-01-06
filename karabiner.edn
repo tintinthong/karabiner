@@ -6,9 +6,10 @@
  :main [
         {
          :des "unix shortcuts"
+         ; all shortcuts here don't clash with unix
          :rules [
-                 [:!Tj :!Odelete_or_backspace] ;unix
                  [:!Th :delete_or_backspace] ;unix
+                 [:!Tj :!Odelete_or_backspace]
                  [:!Tm :return_or_enter]
                  ]}
          {

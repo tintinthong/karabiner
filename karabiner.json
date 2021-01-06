@@ -13,8 +13,19 @@
         "basic.to_if_held_down_threshold_milliseconds" : 500
       },
       "rules" : [ {
-        "description" : "fast access",
+        "description" : "unix shortcuts",
         "manipulators" : [ {
+          "from" : {
+            "key_code" : "h",
+            "modifiers" : {
+              "mandatory" : [ "left_control" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "delete_or_backspace"
+          } ],
+          "type" : "basic"
+        }, {
           "from" : {
             "key_code" : "j",
             "modifiers" : {
@@ -24,17 +35,6 @@
           "to" : [ {
             "key_code" : "delete_or_backspace",
             "modifiers" : [ "left_option" ]
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "h",
-            "modifiers" : {
-              "mandatory" : [ "left_control" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "delete_or_backspace"
           } ],
           "type" : "basic"
         }, {
@@ -377,7 +377,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "symbol-layer",
+        "description" : "symbol-layer (also for mouse btw)",
         "manipulators" : [ {
           "from" : {
             "key_code" : "h",
