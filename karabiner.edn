@@ -1,28 +1,25 @@
  {
  :layers {
-          :hyper-right-mode {:key :period}
-          :hyper-left-mode {:key :z}
           }
  :simlayers {
             }
-  ; but if you press modifier+<non-mapped-key> folllowed by modifier+<mapped-key> you will get the latter followed by the former
  :main [
         {
-         :des "unix delete"
+         :des "fast access"
          :rules [
-                 [:!Tj :!Odelete_or_backspace]
-                 [:!Th :delete_or_backspace]
+                 [:!Tj :!Odelete_or_backspace] ;unix
+                 [:!Th :delete_or_backspace] ;unix
+                 [:!Tm :return_or_enter]
                  ]}
          {
          :des   "caps_lock to esc when pressed alone, to ctrl as modifier"
           :rules [
-          [:caps_lock :left_control nil {:alone :escape}]
+          [:caps_lock :left_control nil {:alone :escape}] ;nil is for conditional, i.e. :condi
           ]
          }
         ; how make key chord work with shift or command
         {:des   "key chords"
          :rules [
-
                  [[:j :k] :hyphen]
                  [[:d :f] :!Shyphen]
                  [[:h :j] :equal_sign]
@@ -30,27 +27,34 @@
                  [[:a :s] :open_bracket]
                  [[:l :semicolon] :close_bracket]
                  [[:s :d] :!S9]
-
-[[:k :l] :!S0]
+                 [[:k :l] :!S0]
                  [[:a :d] :!Sopen_bracket]
                  [[:k :semicolon] :!Sclose_bracket]
                  [[:o :p] :backslash]
                  [[:i :o] :!Sbackslash]
                  ]}
+        {
+         :des "Custom layers - toggle by single press only"
+         :rules [
+                 [[:j :i] ["symbol-layer" 1]]
+                 [[:e :f] ["symbol-layer" 0]]
+                 [[:f :j] ["vi-mode" 0]]
+                 ]
+         }
         {:des "hyper mode - basically, replacing numbers and symbols "
          :rules [
-                 :hyper-left-mode
-                 [:h :0]
-                 [:u :1]
-                 [:i :2]
-                 [:o :3]
-                 [:p :4]
-                 [:open_bracket :4]
-                 [:j :5]
-                 [:k :6]
-                 [:l :7]
-                 [:semicolon :8]
-                 [:quote :9]
+                 :symbol-layer
+                 [:##h :0]
+                 [:##u :1]
+                 [:##i :2]
+                 [:##o :3]
+                 [:##p :4]
+                 [:##open_bracket :4]
+                 [:##j :5]
+                 [:##k :6]
+                 [:##l :7]
+                 [:##semicolon :8]
+                 [:##quote :9]
                  [:##a :!S1]
                  [:##s :!S2]
                  [:##d :!S3]
@@ -60,33 +64,14 @@
                  [:##e :!S7]
                  [:##r :!S8]
                  [:##q :!Sgrave_accent_and_tilde]
-                 [:##v :grave_accent_and_tilde]
-                 :hyper-right-mode
-                 [:h :0]
-                 [:u :1]
-                 [:i :2]
-                 [:o :3]
-                 [:p :4]
-                 [:j :5]
-                 [:k :6]
-                 [:l :7]
-                 [:semicolon :8]
-                 [:quote :9]
-                 [:##a :!S1]
-                 [:##s :!S2]
-                 [:##d :!S3]
-                 [:##f :!S4]
-                 [:##g :!S5]
-                 [:##q :!Sgrave_accent_and_tilde]
-                 [:##w :!S6]
-                 [:##e :!S7]
-                 [:##r :!S8]
                  [:##v :grave_accent_and_tilde]
                  ]
-                 }
-
+         }
+        ;; {:des   "Quit application by pressing command-q twice"
+        ;;       :rules [[:e [:o ["mode-w" 0]] ["mode-w" 1]]
+        ;;               [:e ["mode-w" 1] nil {:delayed {:invoked ["mode-w" 0] :held :s :canceled ["mode-w" 0]}}]]}
         {:des "hyper-mode - mouse"
-         :rules [:hyper-left-mode
+         :rules [:symbol-layer
                  [:down_arrow {:mkey {:y 1536}}]
                  [:up_arrow {:mkey {:y -1536}}]
                  [:left_arrow {:mkey {:x -1536}}]
@@ -98,3 +83,5 @@
  ; the default value is 250
  :simlayer-threshold 300
 }
+
+; I can't seem to switch windows for terminal cmd + ` bcos cmd +   triggers something else
