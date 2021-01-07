@@ -308,16 +308,21 @@
           "to" : [ {
             "set_variable" : {
               "name" : "symbol-layer",
-              "value" : 1
+              "value" : 0
             }
+          } ],
+          "conditions" : [ {
+            "name" : "symbol-layer",
+            "value" : 1,
+            "type" : "variable_if"
           } ],
           "type" : "basic"
         }, {
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "e"
+              "key_code" : "j"
             }, {
-              "key_code" : "f"
+              "key_code" : "i"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : false,
@@ -329,7 +334,7 @@
           "to" : [ {
             "set_variable" : {
               "name" : "symbol-layer",
-              "value" : 0
+              "value" : 1
             }
           } ],
           "type" : "basic"
@@ -350,16 +355,21 @@
           "to" : [ {
             "set_variable" : {
               "name" : "vi-layer",
-              "value" : 1
+              "value" : 0
             }
+          } ],
+          "conditions" : [ {
+            "name" : "vi-layer",
+            "value" : 1,
+            "type" : "variable_if"
           } ],
           "type" : "basic"
         }, {
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "d"
+              "key_code" : "f"
             }, {
-              "key_code" : "k"
+              "key_code" : "j"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : false,
@@ -371,7 +381,7 @@
           "to" : [ {
             "set_variable" : {
               "name" : "vi-layer",
-              "value" : 0
+              "value" : 1
             }
           } ],
           "type" : "basic"

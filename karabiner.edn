@@ -37,10 +37,10 @@
         {
          :des "Custom layers - toggle by single press only"
          :rules [
+                 [[:j :i] ["symbol-layer" 0] :symbol-layer]
                  [[:j :i] ["symbol-layer" 1]]
-                 [[:e :f] ["symbol-layer" 0]]
-                 [[:f :j] ["vi-layer" 1]]
-                 [[:d :k] ["vi-layer" 0]]
+                 [[:f :j] ["vi-layer" 0] :vi-layer]
+                 [[:f :j] ["vi-layer" 1] ]
                  ]
          }
         {:des "symbol-layer (also for mouse btw)"
