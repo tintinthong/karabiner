@@ -34,13 +34,36 @@
                  [[:o :p] :backslash]
                  [[:i :o] :!Sbackslash]
                  ]}
+
+    ;; !  | means mandatory
+    ;; #  | means optional
+    ;; C  | left_command
+    ;; T  | left_control
+    ;; O  | left_option
+    ;; S  | left_shift
+    ;; F  | fn
+    ;; Q  | right_command
+    ;; W  | right_control
+    ;; E  | right_option
+    ;; R  | right_shift
+    ;; !! | mandatory command + control + optional + shift (hyper)
+    ;; ## | optional any
+    ;; This should only be for when you use a keyboard. Can add the condition of the device.
+        {:des "remapping alt with window key"
+         :rules [
+                 [:left_option :left_command]
+                 [:right_option :right_command]
+                 [:left_command :left_option]
+                 [:right_command :right_option]
+                 ]
+         }
         {
          :des "Custom layers - toggle by single press only"
          :rules [
                  [[:j :i] ["symbol-layer" 0] :symbol-layer]
                  [[:j :i] ["symbol-layer" 1]]
-                 [[:f :j] ["vi-layer" 0] :vi-layer]
-                 [[:f :j] ["vi-layer" 1] ]
+                 [[:f :j] ["vi-layer" 0]]
+                 [[:f :j] ["vi-layer" 1] :vi-layer]
                  ]
          }
         {:des "symbol-layer (also for mouse btw)"

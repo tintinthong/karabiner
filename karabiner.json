@@ -290,6 +290,41 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "remapping alt with window key",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "left_option"
+          },
+          "to" : [ {
+            "key_code" : "left_command"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "right_option"
+          },
+          "to" : [ {
+            "key_code" : "right_command"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "left_command"
+          },
+          "to" : [ {
+            "key_code" : "left_option"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "right_command"
+          },
+          "to" : [ {
+            "key_code" : "right_option"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "Custom layers - toggle by single press only",
         "manipulators" : [ {
           "from" : {
@@ -358,11 +393,6 @@
               "value" : 0
             }
           } ],
-          "conditions" : [ {
-            "name" : "vi-layer",
-            "value" : 1,
-            "type" : "variable_if"
-          } ],
           "type" : "basic"
         }, {
           "from" : {
@@ -383,6 +413,11 @@
               "name" : "vi-layer",
               "value" : 1
             }
+          } ],
+          "conditions" : [ {
+            "name" : "vi-layer",
+            "value" : 1,
+            "type" : "variable_if"
           } ],
           "type" : "basic"
         } ]
