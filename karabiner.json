@@ -293,34 +293,62 @@
         "description" : "remapping alt with window key",
         "manipulators" : [ {
           "from" : {
-            "key_code" : "left_option"
+            "key_code" : "left_option",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
           },
           "to" : [ {
             "key_code" : "left_command"
           } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "right_option"
-          },
-          "to" : [ {
-            "key_code" : "right_command"
+          "conditions" : [ {
+            "identifiers" : [ [ "vendor_id", 1452 ], [ "product_id", 632 ] ],
+            "type" : "device_unless"
           } ],
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "left_command"
+            "key_code" : "right_option",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "right_command"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ [ "vendor_id", 1452 ], [ "product_id", 632 ] ],
+            "type" : "device_unless"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "left_command",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
           },
           "to" : [ {
             "key_code" : "left_option"
           } ],
+          "conditions" : [ {
+            "identifiers" : [ [ "vendor_id", 1452 ], [ "product_id", 632 ] ],
+            "type" : "device_unless"
+          } ],
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "right_command"
+            "key_code" : "right_command",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
           },
           "to" : [ {
             "key_code" : "right_option"
+          } ],
+          "conditions" : [ {
+            "identifiers" : [ [ "vendor_id", 1452 ], [ "product_id", 632 ] ],
+            "type" : "device_unless"
           } ],
           "type" : "basic"
         } ]
@@ -378,6 +406,53 @@
             "simultaneous" : [ {
               "key_code" : "f"
             }, {
+              "key_code" : "e"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 0
+            }
+          } ],
+          "conditions" : [ {
+            "name" : "symbol-layer",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "f"
+            }, {
+              "key_code" : "e"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "symbol-layer",
+              "value" : 1
+            }
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "f"
+            }, {
               "key_code" : "j"
             } ],
             "simultaneous_options" : {
@@ -392,6 +467,11 @@
               "name" : "vi-layer",
               "value" : 0
             }
+          } ],
+          "conditions" : [ {
+            "name" : "vi-layer",
+            "value" : 1,
+            "type" : "variable_if"
           } ],
           "type" : "basic"
         }, {
@@ -413,11 +493,6 @@
               "name" : "vi-layer",
               "value" : 1
             }
-          } ],
-          "conditions" : [ {
-            "name" : "vi-layer",
-            "value" : 1,
-            "type" : "variable_if"
           } ],
           "type" : "basic"
         } ]
@@ -773,10 +848,7 @@
         "description" : "Vi Mode",
         "manipulators" : [ {
           "from" : {
-            "key_code" : "j",
-            "modifiers" : {
-              "optional" : [ "any" ]
-            }
+            "key_code" : "j"
           },
           "to" : [ {
             "key_code" : "down_arrow"
@@ -789,10 +861,7 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "k",
-            "modifiers" : {
-              "optional" : [ "any" ]
-            }
+            "key_code" : "k"
           },
           "to" : [ {
             "key_code" : "up_arrow"
@@ -805,10 +874,7 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "h",
-            "modifiers" : {
-              "optional" : [ "any" ]
-            }
+            "key_code" : "h"
           },
           "to" : [ {
             "key_code" : "left_arrow"
@@ -821,10 +887,7 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "l",
-            "modifiers" : {
-              "optional" : [ "any" ]
-            }
+            "key_code" : "l"
           },
           "to" : [ {
             "key_code" : "right_arrow"
@@ -837,10 +900,7 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "b",
-            "modifiers" : {
-              "optional" : [ "any" ]
-            }
+            "key_code" : "b"
           },
           "to" : [ {
             "key_code" : "left_arrow",
@@ -854,10 +914,7 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "w",
-            "modifiers" : {
-              "optional" : [ "any" ]
-            }
+            "key_code" : "w"
           },
           "to" : [ {
             "key_code" : "right_arrow",
@@ -871,16 +928,50 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "e",
-            "modifiers" : {
-              "optional" : [ "any" ]
-            }
+            "key_code" : "e"
           },
           "to" : [ {
             "key_code" : "right_arrow",
             "modifiers" : [ "left_option" ]
           }, {
             "key_code" : "right_arrow"
+          } ],
+          "conditions" : [ {
+            "name" : "vi-layer",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "x"
+          },
+          "to" : [ {
+            "key_code" : "delete_forward"
+          } ],
+          "conditions" : [ {
+            "name" : "vi-layer",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "d"
+            }, {
+              "key_code" : "w"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "key_code" : "delete_forward",
+            "modifiers" : [ "left_option" ]
           } ],
           "conditions" : [ {
             "name" : "vi-layer",
@@ -897,7 +988,7 @@
           },
           "to" : [ {
             "mouse_key" : {
-              "y" : 1536
+              "y" : 2200
             }
           } ],
           "conditions" : [ {
@@ -912,7 +1003,7 @@
           },
           "to" : [ {
             "mouse_key" : {
-              "y" : -1536
+              "y" : -2200
             }
           } ],
           "conditions" : [ {
@@ -927,7 +1018,7 @@
           },
           "to" : [ {
             "mouse_key" : {
-              "x" : -1536
+              "x" : -2200
             }
           } ],
           "conditions" : [ {
@@ -942,7 +1033,7 @@
           },
           "to" : [ {
             "mouse_key" : {
-              "x" : 1536
+              "x" : 2200
             }
           } ],
           "conditions" : [ {

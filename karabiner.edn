@@ -3,6 +3,16 @@
           }
  :simlayers {
             }
+  :devices {
+            :logitech [
+                     {:vendor_id 31 :product_id 46}
+                    ]
+            :apple {
+                   :vendor_id 1452
+                   :product_id 632
+                    }
+
+            }
  :main [
         {
          :des "unix shortcuts"
@@ -51,10 +61,10 @@
     ;; This should only be for when you use a keyboard. Can add the condition of the device.
         {:des "remapping alt with window key"
          :rules [
-                 [:left_option :left_command]
-                 [:right_option :right_command]
-                 [:left_command :left_option]
-                 [:right_command :right_option]
+                 [:##left_option :left_command :!apple ]
+                 [:##right_option :right_command :!apple]
+                 [:##left_command :left_option :!apple]
+                 [:##right_command :right_option :!apple]
                  ]
          }
         {
@@ -62,8 +72,10 @@
          :rules [
                  [[:j :i] ["symbol-layer" 0] :symbol-layer]
                  [[:j :i] ["symbol-layer" 1]]
-                 [[:f :j] ["vi-layer" 0]]
-                 [[:f :j] ["vi-layer" 1] :vi-layer]
+                 [[:f :e] ["symbol-layer" 0] :symbol-layer]
+                 [[:f :e] ["symbol-layer" 1]]
+                 [[:f :j] ["vi-layer" 0] :vi-layer]
+                 [[:f :j] ["vi-layer" 1]]
                  ]
          }
         {:des "symbol-layer (also for mouse btw)"
@@ -96,13 +108,15 @@
          ;maybe don't overdo this
          :rules [
                  :vi-layer
-                [:##j :down_arrow]
-                [:##k :up_arrow]
-                [:##h :left_arrow]
-                [:##l :right_arrow]
-                [:##b :!Oleft_arrow]
-                [:##w :!Oright_arrow]
-                [:##e [:!Oright_arrow :right_arrow] ]
+                [:j :down_arrow]
+                [:k :up_arrow]
+                [:h :left_arrow]
+                [:l :right_arrow]
+                [:b :!Oleft_arrow]
+                [:w :!Oright_arrow]
+                [:e [:!Oright_arrow :right_arrow] ]
+                [:x :delete_forward ]
+                [[:d :w] :!Odelete_forward ]
                 ]
          }
         ;;
@@ -111,10 +125,10 @@
         ;;               [:e ["mode-w" 1] nil {:delayed {:invoked ["mode-w" 0] :held :s :canceled ["mode-w" 0]}}]]}
         {:des "hyper-mode - mouse"
          :rules [:symbol-layer
-                 [:down_arrow {:mkey {:y 1536}}]
-                 [:up_arrow {:mkey {:y -1536}}]
-                 [:left_arrow {:mkey {:x -1536}}]
-                 [:right_arrow {:mkey {:x 1536}}]
+                 [:down_arrow {:mkey {:y 2200}}]
+                 [:up_arrow {:mkey {:y -2200}}]
+                 [:left_arrow {:mkey {:x -2200}}]
+                 [:right_arrow {:mkey {:x 2200}}]
                  [:return_or_enter {:pkey :button1}]
                  [:!Creturn_or_enter {:pkey :button2}]]}
 

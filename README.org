@@ -77,7 +77,7 @@ I did not want to interfere with shortcut keys that use conventional modifiers i
 This configuration will work for both Linux, Windows and Mac distributions.  Atm, this is just on karabiner, but I plan to move everything to kmonad next.
 *** Eliminate Corner Movements
 The worse movements are stretching to the far corners of the keyboard:
-- Map caps lock to control
+- Map caps lock to control (Single press will make caps lock esc)
 - Map Ctrl+h to Delete/Backspace
 - Mao Ctrl+w to function of removing word
 - For Mac or PC, eliminate the use of control and fn keys at the bottom-left of the keyboard
