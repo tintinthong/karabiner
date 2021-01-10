@@ -5,7 +5,9 @@
             }
   :devices {
             :logitech [
-                     {:vendor_id 31 :product_id 46}
+                       {
+                        :vendor_id 1133
+                        :product_id 49948}
                     ]
             :apple {
                    :vendor_id 1452
@@ -60,11 +62,11 @@
     ;; ## | optional any
     ;; This should only be for when you use a keyboard. Can add the condition of the device.
         {:des "remapping alt with window key"
-         :rules [
-                 [:##left_option :left_command :!apple ]
-                 [:##right_option :right_command :!apple]
-                 [:##left_command :left_option :!apple]
-                 [:##right_command :right_option :!apple]
+ :rules [
+                 [:##left_option :left_command :logitech ]
+                 [:##right_option :right_command :logitech]
+                 [:##left_command :left_option :logitech]
+                 [:##right_command :right_option :logitech]
                  ]
          }
         {
@@ -72,8 +74,8 @@
          :rules [
                  [[:j :i] ["symbol-layer" 0] :symbol-layer]
                  [[:j :i] ["symbol-layer" 1]]
-                 [[:f :e] ["symbol-layer" 0] :symbol-layer]
-                 [[:f :e] ["symbol-layer" 1]]
+                 [[:f :e] ["number-layer" 0] :number-layer]
+                 [[:f :e] ["number-layer" 1]]
                  [[:f :j] ["vi-layer" 0] :vi-layer]
                  [[:f :j] ["vi-layer" 1]]
                  ]
@@ -81,6 +83,21 @@
         {:des "symbol-layer (also for mouse btw)"
          :rules [
                  :symbol-layer
+                 [:##a :!S1]
+                 [:##s :!S2]
+                 [:##d :!S3]
+                 [:##f :!S4]
+                 [:##g :!S5]
+                 [:##w :!S6]
+                 [:##e :!S7]
+                 [:##r :!S8]
+                 [:##q :!Sgrave_accent_and_tilde]
+                 [:##v :grave_accent_and_tilde]
+                 ]
+         }
+        {:des "number-layer (also for mouse btw)"
+         :rules [
+                 :number-layer
                  [:##h :0]
                  [:##u :1]
                  [:##i :2]
@@ -92,16 +109,6 @@
                  [:##l :7]
                  [:##semicolon :8]
                  [:##quote :9]
-                 [:##a :!S1]
-                 [:##s :!S2]
-                 [:##d :!S3]
-                 [:##f :!S4]
-                 [:##g :!S5]
-                 [:##w :!S6]
-                 [:##e :!S7]
-                 [:##r :!S8]
-                 [:##q :!Sgrave_accent_and_tilde]
-                 [:##v :grave_accent_and_tilde]
                  ]
          }
         {:des "Vi Mode"
