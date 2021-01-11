@@ -62,6 +62,30 @@
             "key_code" : "left_control"
           } ],
           "type" : "basic"
+        }, {
+          "to_if_alone" : [ {
+            "set_variable" : {
+              "name" : "number-layer",
+              "value" : 1
+            }
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "x"
+            }, {
+              "key_code" : "c"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "key_code" : "p"
+          } ],
+          "type" : "basic"
         } ]
       }, {
         "description" : "key chords",
@@ -503,6 +527,100 @@
           "to" : [ {
             "set_variable" : {
               "name" : "vi-layer",
+              "value" : 1
+            }
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "k"
+            }, {
+              "key_code" : "m"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "custom-1-layer",
+              "value" : 0
+            }
+          } ],
+          "conditions" : [ {
+            "name" : "custom-1-layer",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "k"
+            }, {
+              "key_code" : "m"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "custom-1-layer",
+              "value" : 1
+            }
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "f"
+            }, {
+              "key_code" : "v"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "custom-2-layer",
+              "value" : 0
+            }
+          } ],
+          "conditions" : [ {
+            "name" : "custom-0-layer",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "f"
+            }, {
+              "key_code" : "v"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "custom-2-layer",
               "value" : 1
             }
           } ],
