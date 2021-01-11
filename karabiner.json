@@ -62,30 +62,6 @@
             "key_code" : "left_control"
           } ],
           "type" : "basic"
-        }, {
-          "to_if_alone" : [ {
-            "set_variable" : {
-              "name" : "number-layer",
-              "value" : 1
-            }
-          } ],
-          "from" : {
-            "simultaneous" : [ {
-              "key_code" : "x"
-            }, {
-              "key_code" : "c"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : false,
-              "key_down_order" : "insensitive",
-              "key_up_order" : "insensitive",
-              "key_up_when" : "any"
-            }
-          },
-          "to" : [ {
-            "key_code" : "p"
-          } ],
-          "type" : "basic"
         } ]
       }, {
         "description" : "key chords",
