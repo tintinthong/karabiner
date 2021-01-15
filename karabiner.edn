@@ -1,7 +1,9 @@
  {
  :layers {
-     ;; :symbol-layer {:key :m}
+     :symbol-layer {:key :right_command}
+     :number-layer-2 {:key :right_option}
      ;; :number-layer {:key :s}
+     ;; I don't use layers because I can only afford to use letter keys but they bug me when I type
           }
  :simlayers {
             }
@@ -104,17 +106,32 @@
         {:des "number-layer (also for mouse btw)"
          :rules [
                  :number-layer
-                 [:##h :0]
-                 [:##u :1]
-                 [:##i :2]
-                 [:##o :3]
-                 [:##p :4]
-                 [:##open_bracket :4]
-                 [:##j :5]
-                 [:##k :6]
-                 [:##l :7]
-                 [:##semicolon :8]
-                 [:##quote :9]
+                 [:##n :0]
+                 ;; [:##h :0]
+                 [:##j :1]
+                 [:##k :2]
+                 [:##l :3]
+                 [:##semicolon :4]
+                 [:##quote :5]
+                 [:##u :6]
+                 [:##i :7]
+                 [:##o :8]
+                 [:##p :9]
+                 ]
+         }
+        {:des "number-layer (when holding command)"
+         :rules [
+                 :number-layer-2
+                 [:##v :0]
+                 [:##g :1]
+                 [:##f :2]
+                 [:##d :3]
+                 [:##s :4]
+                 [:##a :5]
+                 [:##r :6]
+                 [:##e :7]
+                 [:##w :8]
+                 [:##q :9]
                  ]
          }
         {:des "Vi Mode"
