@@ -1,7 +1,7 @@
  {
  :layers {
-     :symbol-layer {:key :right_command}
-     :number-layer-2 {:key :right_option}
+     :symbol-layer {:key :right_command }
+     :number-layer-2 {:key :right_option }
      ;; :number-layer {:key :s}
      ;; I don't use layers because I can only afford to use letter keys but they bug me when I type
           }
@@ -86,6 +86,8 @@
                  [[:k :m] ["custom-1-layer" 1] ]
                  [[:f :v] ["custom-2-layer" 0] :custom-0-layer]
                  [[:f :v] ["custom-2-layer" 1]]
+                 [[:w :f] ["mouse-layer" 0] :mouse-layer]
+                 [[:w :f] ["mouse-layer" 1]]
                  ]
          }
         {:des "symbol-layer (also for mouse btw)"
@@ -112,7 +114,7 @@
                  [:##k :2]
                  [:##l :3]
                  [:##semicolon :4]
-                 [:##quote :5]
+                 [:##h :5]
                  [:##u :6]
                  [:##i :7]
                  [:##o :8]
@@ -123,21 +125,22 @@
          :rules [
                  :number-layer-2
                  [:##v :0]
-                 [:##g :1]
-                 [:##f :2]
-                 [:##d :3]
-                 [:##s :4]
-                 [:##a :5]
+                 [:##f :1]
+                 [:##d :2]
+                 [:##s :3]
+                 [:##a :4]
+                 [:##g :5]
                  [:##r :6]
                  [:##e :7]
                  [:##w :8]
                  [:##q :9]
                  ]
          }
-        {:des "Vi Mode"
+        {:des "Vi Mode (normal-mode)"
          ;maybe don't overdo this
          :rules [
                  :vi-layer
+                [:i ["vi-layer" 0] :!vi-layer]
                 [:j :down_arrow]
                 [:k :up_arrow]
                 [:h :left_arrow]
@@ -147,20 +150,28 @@
                 [:e [:!Oright_arrow :right_arrow] ]
                 [:x :delete_forward ]
                 [[:d :w] :!Odelete_forward ]
+                ;; [[:d :b] :!Odelete_backward]
+                [:!Td :page_down]
+                [:!Tu :page_up]
+                [:a :end]
+                [:!Sv [:!Cleft_arrow :!S!Cright_arrow]]
+                [:!Si :home]
                 ]
          }
         ;;
         ;; {:des   "Quit application by pressing command-q twice"
         ;;       :rules [[:e [:o ["mode-w" 0]] ["mode-w" 1]]
         ;;               [:e ["mode-w" 1] nil {:delayed {:invoked ["mode-w" 0] :held :s :canceled ["mode-w" 0]}}]]}
-        {:des "hyper-mode - mouse"
-         :rules [:symbol-layer
-                 [:down_arrow {:mkey {:y 2200}}]
-                 [:up_arrow {:mkey {:y -2200}}]
-                 [:left_arrow {:mkey {:x -2200}}]
-                 [:right_arrow {:mkey {:x 2200}}]
-                 [:return_or_enter {:pkey :button1}]
-                 [:!Creturn_or_enter {:pkey :button2}]]}
+        ;;
+        ;; seems to have a lag so cant really use them like arrow keys. its weired
+        {:des "mouse"
+         :rules [:mouse-layer
+                 [:k {:mkey {:y 2200}}]
+                 [:i {:mkey {:y -2200}}]
+                 [:j {:mkey {:x -2200}}]
+                 [:l {:mkey {:x 2200}}]
+                 [:spacebar {:pkey :button1}]
+                 [:!Cspacebar {:pkey :button2}]]}
 
         ]
  ; the default value is 250
