@@ -2,8 +2,9 @@
  :layers {
      ;; :symbol-layer {:key :right_command }
      ;; :number-2-layer {:key :right_option }
+     ;; :symbol-layer {:key :right_option}
      :symbol-layer {:key :right_option}
-     :number-2-layer {:key :right_command}
+     ;; :number-layer {:key :fn}
           }
   :devices {
             :thinkpad [{:vendor_id 6127 :prodcut_id 24647}]
@@ -27,7 +28,6 @@
             {:set ["mouse-layer" 0] }
             {:set ["custom-1-layer" 0] }
             {:set ["custom-2-layer" 0] }
-
                      ]
        }
  :main [
@@ -76,35 +76,36 @@
     ;; !! | mandatory command + control + optional + shift (hyper)
     ;; ## | optional any
     ;; This should only be for when you use a keyboard. Can add the condition of the device.
-        {:des "remapping alt with window key (logitech)"
- :rules [
-         [:##left_option :left_command ]
-         [:##right_option :right_command ]
-         [:##left_command :left_option ]
-         [:##right_command :right_option ]
-         :logitech
-                 ]
-         }
+        ;; {:des "remapping alt with window key (logitech)"
+ ;; :rules [
+ ;;         [:##left_option :left_command ]
+ ;;         [:##right_option :right_command ]
+ ;;         [:##left_command :left_option ]
+ ;;         [:##right_command :right_option ]
+ ;;         :logitech
+ ;;                 ]
+         ;; }
         {:des "remapping alt with window key (thinkpad)"
  :rules [
-                 [:##print_screen :right_command ]
-                 [:##left_command :left_option ]
                  [:##right_option :right_command ]
                  [:##left_option :left_command ]
+                 ;; [:##print_screen :right_option]
+                 [:##left_command :left_option ]
                   :thinkpad
-
                  ]
          }
-
         {
          :des "Custom layers - toggle by single press only"
          :rules [
-                 [[:j :i] ["symbol-layer" 0] :symbol-layer]
-                 [[:j :i] ["symbol-layer" 1]]
-                 [[:f :e] ["number-layer" 0] :number-layer]
-                 [[:f :e] ["number-layer" 1]]
-                 [[:f :j] ["vi-normal-layer" 0] :vi-normal-layer]
-                 [[:f :j] ["vi-normal-layer" 1]]
+                 [{:pkey :button2} ["symbol-layer" 0] :symbol-layer]
+                 [{:pkey :button2} ["symbol-layer" 1]]
+                 ;; [[:j :i] ["symbol-layer" 0] :symbol-layer]
+                 ;; [[:j :i] ["symbol-layer" 1]]
+                 [{:pkey :button2} ["number-layer" 0] :number-layer]
+                 [{:pkey :button2} ["number-layer" 1]]
+
+                 [{:pkey :button3} ["vi-normal-layer" 0] :vi-normal-layer]
+                 [{:pkey :button3} ["vi-normal-layer" 1]]
                  [[:k :m] ["custom-1-layer" 0] :custom-1-layer]
                  [[:k :m] ["custom-1-layer" 1] ]
                  [[:f :v] ["custom-2-layer" 0] :custom-0-layer]
@@ -126,6 +127,18 @@
                  [:##r :!S8]
                  [:##q :!Sgrave_accent_and_tilde]
                  [:##v :grave_accent_and_tilde]
+
+                 [:##n :0]
+                 ;; [:##h :0]
+                 [:##j :1]
+                 [:##k :2]
+                 [:##l :3]
+                 [:##semicolon :4]
+                 [:##h :5]
+                 [:##u :6]
+                 [:##i :7]
+                 [:##o :8]
+                 [:##p :9]
                  ]
          }
         {:des "number-layer (also for mouse btw)"
@@ -142,21 +155,6 @@
                  [:##i :7]
                  [:##o :8]
                  [:##p :9]
-                 ]
-         }
-        {:des "number-layer (when holding command)"
-         :rules [
-                 :number-2-layer
-                 [:##v :0]
-                 [:##f :1]
-                 [:##d :2]
-                 [:##s :3]
-                 [:##a :4]
-                 [:##g :5]
-                 [:##r :6]
-                 [:##e :7]
-                 [:##w :8]
-                 [:##q :9]
                  ]
          }
         {:des "Vi Mode (normal-mode)"
