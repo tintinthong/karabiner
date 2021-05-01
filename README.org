@@ -5,7 +5,11 @@
 #+begin_src bash
 # install karabiner on your own first
 brew install yqrashawn/goku/goku
-# rename Default Profile to Default
+# check edn config path
+echo $GOKU_EDN_CONFIG_FILE
+# i put this into my .zprofile 
+export GOKU_EDN_CONFIG_FILE=<path to karabiner.edn>
+# export 
 goku # Done!
 #+end_src
 
