@@ -97,15 +97,15 @@
         {
          :des "Custom layers - toggle by single press only"
          :rules [
-                 [{:pkey :button2} ["symbol-layer" 0] :symbol-layer]
-                 [{:pkey :button2} ["symbol-layer" 1]]
+                 ;; [{:pkey :button2} ["symbol-layer" 0] :symbol-layer]
+                 ;; [{:pkey :button2} ["symbol-layer" 1]]
                  ;; [[:j :i] ["symbol-layer" 0] :symbol-layer]
                  ;; [[:j :i] ["symbol-layer" 1]]
-                 [{:pkey :button2} ["number-layer" 0] :number-layer]
-                 [{:pkey :button2} ["number-layer" 1]]
+                 ;; [{:pkey :button2} ["number-layer" 0] :number-layer]
+                 ;; [{:pkey :button2} ["number-layer" 1]]
 
-                 [{:pkey :button3} ["vi-normal-layer" 0] :vi-normal-layer]
-                 [{:pkey :button3} ["vi-normal-layer" 1]]
+                 [{:pkey :button2} ["vi-normal-layer" 0] :vi-normal-layer]
+                 [{:pkey :button2} ["vi-normal-layer" 1]]
                  [[:k :m] ["custom-1-layer" 0] :custom-1-layer]
                  [[:k :m] ["custom-1-layer" 1] ]
                  [[:f :v] ["custom-2-layer" 0] :custom-0-layer]
@@ -128,7 +128,7 @@
                  [:##q :!Sgrave_accent_and_tilde]
                  [:##v :grave_accent_and_tilde]
 
-                 [:##n :0]
+                 [:##m :0]
                  ;; [:##h :0]
                  [:##j :1]
                  [:##k :2]
@@ -144,7 +144,7 @@
         {:des "number-layer (also for mouse btw)"
          :rules [
                  :number-layer
-                 [:##n :0]
+                 [:##m :0]
                  ;; [:##h :0]
                  [:##j :1]
                  [:##k :2]
@@ -161,7 +161,7 @@
          ;maybe don't overdo this
          :rules [
                  :vi-normal-layer
-                [:i ["vi-normal-layer" 0] :!vi-normal-layer]
+                [:i ["vi-normal-layer" 0] :vi-normal-layer]
                 [:j :down_arrow]
                 [:k :up_arrow]
                 [:h :left_arrow]
@@ -170,12 +170,23 @@
                 [:w :!Oright_arrow]
                 [:e [:!Oright_arrow :right_arrow] ]
                 [:x :delete_forward ]
+                [:g :home]
+                [:!Sg :end]
                 [[:d :w] :!Odelete_forward ]
                 [[:d :b] :!Odelete_or_backspace]
+                [:!Si :home] ;;gg
+                [:!Sa :end] ;;Sg
+                [:!Ri :home]
+                [:!Ra :end]
                 [:!Td :page_down]
                 [:!Tu :page_up]
-                [[:g :g] :end]
-                ;; [:!Sv [:!Cleft_arrow :!S!Cright_arrow]]
+                [:o [:end :return_or_enter]] ;;newline
+                [:!So [:home :return_or_enter :up_arrow]] ;; newline and up
+                [:u :!Cz]
+                [:s :!Cf]
+                [:y :!Cc]
+                [:!Tr :!C!Sz]
+                [:!Sv [:!Cleft_arrow :!SCright_arrow]]
                 ]
          }
         ;;
