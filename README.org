@@ -1,4 +1,4 @@
-#+TITLE: @tintinthong's Karabiner Configuration
+#+TITLE: @tintinthong's Karabiner Config
 
 ** Setup
 
