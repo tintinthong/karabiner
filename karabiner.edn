@@ -83,12 +83,12 @@
          :rules [
                  [{:pkey :button2} ["vi-normal-layer" 0] :vi-normal-layer]
                  [{:pkey :button2} ["vi-normal-layer" 1]]
-                 [[:k :m] ["custom-1-layer" 0] :custom-1-layer]
-                 [[:k :m] ["custom-1-layer" 1] ]
-                 [[:f :v] ["custom-2-layer" 0] :custom-0-layer]
-                 [[:f :v] ["custom-2-layer" 1]]
-                 [[:w :f] ["mouse-layer" 0] :mouse-layer]
-                 [[:w :f] ["mouse-layer" 1]]
+                 ;; [[:k :m] ["custom-1-layer" 0] :custom-1-layer]
+                 ;; [[:k :m] ["custom-1-layer" 1] ]
+                 ;; [[:f :v] ["custom-2-layer" 0] :custom-0-layer]
+                 ;; [[:f :v] ["custom-2-layer" 1]]
+                 ;; [[:w :f] ["mouse-layer" 0] :mouse-layer]
+                 ;; [[:w :f] ["mouse-layer" 1]]
                  ]
          }
         {:des "symbol-layer (also for mouse btw)"
