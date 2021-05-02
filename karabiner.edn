@@ -1,10 +1,6 @@
  {
  :layers {
-     ;; :symbol-layer {:key :right_command }
-     ;; :number-2-layer {:key :right_option }
-     ;; :symbol-layer {:key :right_option}
      :symbol-layer {:key :right_option}
-     ;; :number-layer {:key :fn}
           }
   :devices {
             :thinkpad [{:vendor_id 6127 :prodcut_id 24647}]
@@ -33,9 +29,8 @@
  :main [
         {
          :des "unix shortcuts"
-         ; all shortcuts here don't clash with unix
          :rules [
-                 [:!Th :delete_or_backspace] ;unix
+                 [:!Th :delete_or_backspace]
                  [:!Tj :!Odelete_or_backspace]
                  [:!Tm :return_or_enter]
                  ]}
@@ -45,7 +40,6 @@
           [:caps_lock :left_control nil {:alone :escape}] ;nil is for conditional, i.e. :condi
           ]
          }
-        ; how make key chord work with shift or command
         {:des   "key chords"
          :rules [
                  [[:j :k] :hyphen]
@@ -75,16 +69,6 @@
     ;; R  | right_shift
     ;; !! | mandatory command + control + optional + shift (hyper)
     ;; ## | optional any
-    ;; This should only be for when you use a keyboard. Can add the condition of the device.
-        ;; {:des "remapping alt with window key (logitech)"
- ;; :rules [
- ;;         [:##left_option :left_command ]
- ;;         [:##right_option :right_command ]
- ;;         [:##left_command :left_option ]
- ;;         [:##right_command :right_option ]
- ;;         :logitech
- ;;                 ]
-         ;; }
         {:des "remapping alt with window key (thinkpad)"
  :rules [
                  [:##right_option :right_command ]
@@ -97,13 +81,6 @@
         {
          :des "Custom layers - toggle by single press only"
          :rules [
-                 ;; [{:pkey :button2} ["symbol-layer" 0] :symbol-layer]
-                 ;; [{:pkey :button2} ["symbol-layer" 1]]
-                 ;; [[:j :i] ["symbol-layer" 0] :symbol-layer]
-                 ;; [[:j :i] ["symbol-layer" 1]]
-                 ;; [{:pkey :button2} ["number-layer" 0] :number-layer]
-                 ;; [{:pkey :button2} ["number-layer" 1]]
-
                  [{:pkey :button2} ["vi-normal-layer" 0] :vi-normal-layer]
                  [{:pkey :button2} ["vi-normal-layer" 1]]
                  [[:k :m] ["custom-1-layer" 0] :custom-1-layer]
@@ -129,7 +106,6 @@
                  [:##v :grave_accent_and_tilde]
 
                  [:##m :0]
-                 ;; [:##h :0]
                  [:##j :1]
                  [:##k :2]
                  [:##l :3]
@@ -141,11 +117,10 @@
                  [:##p :9]
                  ]
          }
-        {:des "number-layer (also for mouse btw)"
+        {:des "number-layer"
          :rules [
                  :number-layer
                  [:##m :0]
-                 ;; [:##h :0]
                  [:##j :1]
                  [:##k :2]
                  [:##l :3]
@@ -158,7 +133,7 @@
                  ]
          }
         {:des "Vi Mode (normal-mode)"
-         ;maybe don't overdo this
+         ; don't overdo this!
          :rules [
                  :vi-normal-layer
                 [:i ["vi-normal-layer" 0] :vi-normal-layer]
@@ -181,7 +156,7 @@
                 [:!Td :page_down]
                 [:!Tu :page_up]
                 [:o [:end :return_or_enter]] ;;newline
-                [:!So [:home :return_or_enter :up_arrow]] ;; newline and up
+                [:!So [:home :return_or_enter :up_arrow]] ;;newline and up
                 [:u :!Cz]
                 [:s :!Cf]
                 [:y :!Cc]
@@ -193,7 +168,6 @@
         ;; {:des   "Quit application by pressing command-q twice"
         ;;       :rules [[:e [:o ["mode-w" 0]] ["mode-w" 1]]
         ;;               [:e ["mode-w" 1] nil {:delayed {:invoked ["mode-w" 0] :held :s :canceled ["mode-w" 0]}}]]}
-        ;;
         ;; seems to have a lag so cant really use them like arrow keys. its weired
         {:des "mouse"
          :rules [:mouse-layer
@@ -205,8 +179,7 @@
                  [:!Cspacebar {:pkey :button2}]]}
 
         ]
- ; the default value is 250
+ ; default value = 250
  :simlayer-threshold 300
 }
 
-; I can't seem to switch windows for terminal cmd + ` bcos cmd +   triggers something else
