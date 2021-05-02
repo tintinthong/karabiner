@@ -1,6 +1,6 @@
 #+TITLE: @tintinthong's Karabiner Configuration
 
-* Setup
+** Setup
 
 #+begin_src bash
 brew install yqrashawn/goku/goku
@@ -9,16 +9,16 @@ export GOKU_EDN_CONFIG_FILE=$HOME/.config/karabiner/karabiner.edn
 goku # Done!
 #+end_src
 
-* Does this configuration fit you?
+** Does this configuration fit you?
 
-** Ideal User
+*** Ideal User
 - A vim user
 - A touch-typist
 - Someone who seeks a keyboard-only workflow
 - Someone locked into the MacOs Ecosystem
 - Someone planning to invest in a 40% keyboard
 
-** Applications I optimise
+*** Applications I optimise
 - doom emacs
 - vim
 - spectacle
@@ -26,22 +26,22 @@ goku # Done!
 - terminal
 - mac
 
-* Keybinding Philosophy
+** Keybinding Philosophy
 
-** 40%
+*** 40%
 
 #+begin_quote
 41 keys only
 #+end_quote
 
-** Spatially and sequentially aware
+*** Spatially and sequentially aware
 - Parantheses: Closing and opening should mirror each other.
 - Numbers: Numbers increase in a row-by-row like a calculator.
 - Symbol: $ is CMD+f because f is directly below 4
-** Key-Chord-centric
+*** Key-Chord-centric
 - [ => a+s
 - \ => o+p
-** Eliminate Corner Movements
+*** Eliminate Corner Movements
 - caps lock => control (Single press will make caps lock esc)
 - Delete/Backspace => Ctrl+h
 - ` => CMD+v
