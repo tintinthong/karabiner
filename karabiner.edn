@@ -1,10 +1,12 @@
  {
  :layers {
-     :symbol-layer {:key :right_option}
+     :symbol-layer {:key :right_option }
+     :symbol-layer-2 {:key :right_command }
           }
   :devices {
-            :thinkpad [{:vendor_id 6127 :prodcut_id 24647}]
+            :thinkpad [{:vendor_id 6127 :product_id 24647}]
             :logitech [{:vendor_id 1133 :product_id 49948}]
+            :apple [{:vendor_id 1452 :product_id 34304}]
             }
  :tos {
        :turn_off_all_layers [
@@ -69,13 +71,10 @@
     ;; R  | right_shift
     ;; !! | mandatory command + control + optional + shift (hyper)
     ;; ## | optional any
-        {:des "remapping alt with window key (thinkpad)"
+        {:des "Remapping (thinkpad)"
  :rules [
-                 [:##right_option :right_command ]
-                 [:##left_option :left_command ]
-                 ;; [:##print_screen :right_option]
-                 [:##left_command :left_option ]
-                  :thinkpad
+                 [:##left_option :left_command [:thinkpad]]
+                 [:##left_command :left_option [:thinkpad] ]
                  ]
          }
         {
@@ -94,6 +93,32 @@
         {:des "symbol-layer (also for mouse btw)"
          :rules [
                  :symbol-layer
+                 [:##a :!S1]
+                 [:##s :!S2]
+                 [:##d :!S3]
+                 [:##f :!S4]
+                 [:##g :!S5]
+                 [:##w :!S6]
+                 [:##e :!S7]
+                 [:##r :!S8]
+                 [:##q :!Sgrave_accent_and_tilde]
+                 [:##v :grave_accent_and_tilde]
+
+                 [:##m :0]
+                 [:##j :1]
+                 [:##k :2]
+                 [:##l :3]
+                 [:##semicolon :4]
+                 [:##h :5]
+                 [:##u :6]
+                 [:##i :7]
+                 [:##o :8]
+                 [:##p :9]
+                 ]
+         }
+        {:des "symbol-layer (also for mouse btw)"
+         :rules [
+                 :symbol-layer-2
                  [:##a :!S1]
                  [:##s :!S2]
                  [:##d :!S3]
