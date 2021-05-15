@@ -64,6 +64,8 @@
                  [[:o :p] :backslash]
                  [[:i :o] :!Sbackslash]
                  [[:s :f] :tab]
+                 [[:f :j] :return_or_enter]
+                 [[:d :k] :return_or_enter]
                  ]}
 
     ;; !  | means mandatory
