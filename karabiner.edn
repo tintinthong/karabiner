@@ -1,5 +1,7 @@
  {
  :layers {
+     ;; note: goku doesn't play well if we specify layer on right_option and remap right_option to right_command
+     ;; this is especially for modifier keys
      :symbol-layer {:key :right_option }
      :symbol-layer-2 {:key :right_command }
           }
@@ -71,7 +73,7 @@
     ;; R  | right_shift
     ;; !! | mandatory command + control + optional + shift (hyper)
     ;; ## | optional any
-        {:des "Remapping (thinkpad)"
+        {:des "Remapping Alt Window(thinkpad)"
  :rules [
                  [:##left_option :left_command [:thinkpad]]
                  [:##left_command :left_option [:thinkpad] ]
