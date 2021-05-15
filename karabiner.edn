@@ -44,6 +44,11 @@
           [:caps_lock :left_control nil {:alone :escape}] ;nil is for conditional, i.e. :condi
           ]
          }
+        {
+         :des "Switching window"
+         :rules [
+                 [:!Ccaps_lock :!Ctab]
+                 ]}
         {:des   "key chords"
          :rules [
                  [[:j :k] :hyphen]
