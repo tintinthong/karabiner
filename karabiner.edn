@@ -58,6 +58,7 @@
                  [[:k :semicolon] :!Sclose_bracket]
                  [[:o :p] :backslash]
                  [[:i :o] :!Sbackslash]
+                 [[:s :f] :tab]
                  ]}
 
     ;; !  | means mandatory
@@ -74,7 +75,7 @@
     ;; !! | mandatory command + control + optional + shift (hyper)
     ;; ## | optional any
         {:des "Remapping Alt Window(thinkpad)"
- :rules [
+         :rules [
                  [:##left_option :left_command [:thinkpad]]
                  [:##left_command :left_option [:thinkpad] ]
                  ]
