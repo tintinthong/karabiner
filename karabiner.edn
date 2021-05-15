@@ -37,8 +37,8 @@
                  [:!Th :delete_or_backspace]
                  [:!Tj :!Odelete_or_backspace]
                  [:!Tm :return_or_enter]
-                 [:!Ts :!STtab] ;; for switching windows
-                 [:!Tl :!Ttab] ;; for switching windows
+                 [:!Ta :!STtab] ;; for switching windows
+                 [:!Tsemicolon :!Ttab] ;; for switching windows
                  ]}
          {
          :des   "caps_lock to esc when pressed alone, to ctrl as modifier"

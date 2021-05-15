@@ -93,7 +93,7 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "s",
+            "key_code" : "a",
             "modifiers" : {
               "mandatory" : [ "left_control" ]
             }
@@ -105,7 +105,7 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "l",
+            "key_code" : "semicolon",
             "modifiers" : {
               "mandatory" : [ "left_control" ]
             }
